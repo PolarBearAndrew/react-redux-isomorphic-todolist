@@ -8,6 +8,7 @@ export default constants([
 
     "LOAD_TODO_REQUEST",
   	"LOAD_TODO_SUCCESS",
-  	"LOAD_TODO_ERROR"
+  	"LOAD_TODO_ERROR",
+  	"FINISH_TODO"
 
 ]);

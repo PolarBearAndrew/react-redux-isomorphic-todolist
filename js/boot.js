@@ -1,36 +1,29 @@
 /*
 	這是 non-isomorphic 版本的進入點
 	由它負責建立 composedReducers, finalCreateStore 與 store instance
-
 	如果是 isomorphic 版，則由 srever.js 負責做這些事
-
  */
+import Immutable 			from 'immutable';
+import { Provider } 		from 'react-redux';
 import React, { Component } from 'react';
-import AppWrap from './components/AppWrap';
+import { devTools, persistState } 	from 'redux-devtools'; // devTools
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
-import { Provider } from 'react-redux';
-import * as reducers from './reducers';
-import promiseMiddleware from './utils/PromiseMiddleware';
-import Immutable from 'immutable';
 
-// devTools
-import { devTools, persistState } from 'redux-devtools';
+import * as reducers 	 from './reducers';
+import AppWrap 			 from './components/AppWrap';
+import promiseMiddleware from './utils/PromiseMiddleware';
 
 const TodoState = Immutable.Record({
 	all: null,
 	idCurrentTodo: undefined,
 	total: '0'
-})
+});
 
 const TodoRecord = Immutable.Record({
 	id: null,
 	title: "",
 	info: ""
-})
-
-// const CartState = Immutable.Record({
-// 	idProducts: Immutable.List.of([])
-// })
+});
 
 function convertToRecord( arr, Def ){
 	// 最終返還出去的是 List of TodoRecord

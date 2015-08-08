@@ -18,7 +18,7 @@ var TodoItem = React.createClass( {
 		<div className="uk-panel uk-panel-box uk-margin-bottom">
 
 			<p className="uk-h4">
-				<input type="checkbox"> </input>
+				<input type="checkbox" onClick={this.props.onCheck}> </input>
 				<span className="info"> {todo.title} </span>
 				{todo.info}
 			</p>

@@ -33,7 +33,9 @@ export function toggleLoading( show:Boolean, msg:String ) {
 	};
 }
 
-export function done() {
-
-	return;
+export function done( todo ) {
+	return {
+		type: types.FINISH_TODO,
+		todo
+	};
 }

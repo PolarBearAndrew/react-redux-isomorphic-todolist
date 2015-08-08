@@ -6,7 +6,8 @@ import {
 
   LOAD_TODO_REQUEST,
   LOAD_TODO_SUCCESS,
-  LOAD_TODO_ERROR
+  LOAD_TODO_ERROR,
+  FINISH_TODO
 
 } from '../constants/ActionTypes';
 
@@ -36,8 +37,8 @@ export default function products( state = initialState, action ) {
   switch ( action.type ) {
 
 	  case LOAD_TODO_REQUEST:
-	  	console.log('LOAD_TODO_REQUEST ', action.result);
-		return state;
+	  	console.log('LOAD_TODO_REQUEST');
+			return state;
 
 	  case LOAD_TODO_SUCCESS:
 	  	console.log('LOAD_TODO_SUCCESS');
@@ -48,6 +49,12 @@ export default function products( state = initialState, action ) {
 	  case LOAD_TODO_ERROR:
 	  	console.log('LOAD_TODO_ERROR');
 			return state;
+
+		case FINISH_TODO:
+			console.log('FINISH_TODO');
+			return state.update( 'all', list => {
+				return list.filter( val => { return val != action.todo; });
+			});
 
 	  default:
 			return state;

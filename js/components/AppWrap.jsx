@@ -26,7 +26,7 @@ export default class AppWrap extends Component {
 				   </DebugPanel>
 		}
 
-		tool = null; //hide/show dev tool
+		// tool = null; //hide/show dev tool
 
 		//console.log('store', this.props.store.getState());
 
