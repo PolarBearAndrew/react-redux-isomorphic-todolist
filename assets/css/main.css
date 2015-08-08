@@ -14,3 +14,14 @@
 .info{
 	color: #0E820C;
 }
+
+input[type="textbox"]{
+	width: 200px;
+	height: 35px;
+	font-size: 22px;
+}
+
+#submit{
+    height: 35px;
+    margin-left: 10px;
+}

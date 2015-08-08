@@ -39,3 +39,10 @@ export function done( todo ) {
 		todo
 	};
 }
+
+export function addTodo( todo ) {
+	return {
+		type: types.ADD_TODO,
+		todo
+	};
+}

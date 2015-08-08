@@ -7,7 +7,8 @@ import {
   LOAD_TODO_REQUEST,
   LOAD_TODO_SUCCESS,
   LOAD_TODO_ERROR,
-  FINISH_TODO
+  FINISH_TODO,
+  ADD_TODO
 
 } from '../constants/ActionTypes';
 
@@ -54,6 +55,18 @@ export default function products( state = initialState, action ) {
 			console.log('FINISH_TODO');
 			return state.update( 'all', list => {
 				return list.filter( val => { return val != action.todo; });
+			});
+
+		case ADD_TODO:
+			console.log('ADD_TODO');
+			let newTodo = TodoRecord;
+
+			newTodo.id = state.all.length + 1;
+			newTodo.title = action.todo.title;
+			newTodo.info = action.todo.info;
+
+			return state.update( 'all', list => {
+				return list.push(newTodo)
 			});
 
 	  default:

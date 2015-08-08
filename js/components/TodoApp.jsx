@@ -5,6 +5,7 @@ import { Connector }          from 'react-redux';
 // flux
 import * as TodoActions   from '../actions/TodoActions';
 import TodoContainer      from './TodoContainer';
+
 // import ProductsContainer  from './ProductsContainer';
 // import ProductDetail      from './ProductDetail';
 
@@ -19,7 +20,6 @@ export default class TodoApp extends Component {
   render() {
     return (
       <div>
-
         <Connector select={ state => state }>
           {this.renderTodo}
         </Connector>
