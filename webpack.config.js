@@ -31,7 +31,7 @@ module.exports = {
       // 'redux': 'redux'
     },
     // require() 時不用加 .suffix
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.node']
   },
 
   // jx: 記得設定 babel 的 stage=0 才支援最新 es7 語法
@@ -54,6 +54,16 @@ module.exports = {
     {
       test: /\.css?$/,
       loaders: ['style', 'raw'],
+      include: __dirname
+    },
+    {
+      test: /\.json?$/,
+      loaders: ['json-loader'],
+      include: __dirname
+    },
+    {
+      test: /\.node?$/,
+      loader: "node-loader",
       include: __dirname
     }]
   }
