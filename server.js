@@ -51,6 +51,8 @@ routines.forEach( function(item){
         // 即可開始組合 react 字串
         .then( result => {
 
+            console.log('store', store.getState());
+
             let markup = React.renderToString( <AppWrap store={store} /> );
             // var markup = React.renderToString( React.createElement(AppWrap, {store: store})); // 另種寫法
 
